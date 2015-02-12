@@ -1,4 +1,4 @@
-FROM alexisvincent/debian
+FROM alexisvincent/debian:wheezy
 MAINTAINER Alexis Vincent <alexisjohnvincent@gmail.com>
 
 ENV APACHE_VERSION 2.2.22-13+deb7u4
