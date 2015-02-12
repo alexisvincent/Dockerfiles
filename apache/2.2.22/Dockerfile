@@ -11,7 +11,10 @@ RUN \
     apt-get -y install apache2=${APACHE_VERSION} && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN /bin/ln -sf ../sites-available/default-ssl /etc/apache2/sites-enabled/001-default-ssl
+COPY container/apache2.conf /etc/apache2/apache2.conf
+COPY container/000-default /etc/apache2/sites-enabled/000-default
+COPY container/000-default-ssl /etc/apache2/sites-enabled/001-default-ssl
+
 RUN /bin/ln -sf ../mods-available/ssl.conf /etc/apache2/mods-enabled/
 RUN /bin/ln -sf ../mods-available/ssl.load /etc/apache2/mods-enabled/
 
