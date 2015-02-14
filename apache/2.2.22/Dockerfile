@@ -12,13 +12,12 @@ RUN \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY container/apache2.conf /etc/apache2/apache2.conf
+
 COPY container/000-default /etc/apache2/sites-enabled/000-default
 COPY container/000-default-ssl /etc/apache2/sites-enabled/001-default-ssl
 
-RUN /bin/ln -sf ../mods-available/ssl.conf /etc/apache2/mods-enabled/
-RUN /bin/ln -sf ../mods-available/ssl.load /etc/apache2/mods-enabled/
+RUN a2enmod ssl rewrite
 
-EXPOSE 80
-EXPOSE 443
+EXPOSE 80 443
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

@@ -2,12 +2,14 @@
 <VirtualHost _default_:443>
 	ServerAdmin webmaster@localhost
 
-	DocumentRoot /var/www
+	DocumentRoot /data/www
+
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
 	</Directory>
-	<Directory /var/www/>
+
+	<Directory /data/www/>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride None
 		Order allow,deny
@@ -15,6 +17,7 @@
 	</Directory>
 
 	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+
 	<Directory "/usr/lib/cgi-bin">
 		AllowOverride None
 		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
@@ -122,9 +125,11 @@
 	#     This enables optimized SSL connection renegotiation handling when SSL
 	#     directives are used in per-directory context.
 	#SSLOptions +FakeBasicAuth +ExportCertData +StrictRequire
+
 	<FilesMatch "\.(cgi|shtml|phtml|php)$">
 		SSLOptions +StdEnvVars
 	</FilesMatch>
+
 	<Directory /usr/lib/cgi-bin>
 		SSLOptions +StdEnvVars
 	</Directory>
@@ -153,6 +158,7 @@
 	#   Similarly, one has to force some clients to use HTTP/1.0 to workaround
 	#   their broken HTTP/1.1 implementation. Use variables "downgrade-1.0" and
 	#   "force-response-1.0" for this.
+
 	BrowserMatch "MSIE [2-6]" \
 		nokeepalive ssl-unclean-shutdown \
 		downgrade-1.0 force-response-1.0

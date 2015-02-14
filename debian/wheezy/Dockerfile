@@ -1,5 +1,5 @@
 #
-# Ubuntu Dockerfile
+# Debian Dockerfile
 #
 # https://github.com/alexisvincent/Dockerfiles/debian
 #
@@ -12,7 +12,7 @@ MAINTAINER Alexis Vincent "alexisjohnvincent@gmail.com"
 # Install.
 RUN \
   apt-get update && \
-  apt-get install -y git wget && \
+  apt-get install -y git wget supervisor && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Set environment variables.
