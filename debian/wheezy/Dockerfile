@@ -6,8 +6,9 @@
 
 # Pull base image.
 FROM debian:wheezy
-
 MAINTAINER Alexis Vincent "alexisjohnvincent@gmail.com"
+
+ENV DEBIAN_FRONTEND noninteractive
 
 # Install.
 RUN \
