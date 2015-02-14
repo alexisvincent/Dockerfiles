@@ -14,7 +14,7 @@ RUN \
 COPY container/apache2.conf /etc/apache2/apache2.conf
 
 COPY container/000-default /etc/apache2/sites-enabled/000-default
-COPY container/000-default-ssl /etc/apache2/sites-enabled/001-default-ssl
+COPY container/001-default-ssl /etc/apache2/sites-enabled/001-default-ssl
 
 RUN a2enmod ssl rewrite
 
