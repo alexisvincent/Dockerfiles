@@ -4,7 +4,7 @@
 # https://github.com/alexisvincent/Dockerfiles/laravel
 #
 
-FROM alexisvincent/nginx.hhvm:3.5.0
+FROM alexisvincent/nginx.hhvm:3.5.1
 MAINTAINER Alexis Vincent "alexisjohnvincent@gmail.com"
 
 # Add configs

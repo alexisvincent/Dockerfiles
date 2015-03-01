@@ -1,4 +1,4 @@
-FROM alexisvincent/nginx:1.7.9
+FROM alexisvincent/nginx:1.7.10
 MAINTAINER Alexis Vincent <alexisjohnvincent@gmail.com>
 
 ENV PHP_VERSION 5.4.36-0+deb7u3

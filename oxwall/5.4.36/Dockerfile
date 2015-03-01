@@ -14,4 +14,3 @@ COPY container/cron.sh /data/cron.sh
 RUN chmod o+x /data/cron.sh
 
 RUN rm -rf /data/www/*
-# ADD src /data/www
