@@ -4,7 +4,7 @@ MAINTAINER <alexisjohnvincent@gmail.com>
 # Install.
 RUN \
   apt-get update && \
-  apt-get install -y php5-mysql php5-gd libfreetype6 cron exim4 && \
+  apt-get install -y php5-mysql php5-gd libfreetype6 cron sendmain-bin && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY container/default.conf /etc/nginx/conf.d/default.conf
